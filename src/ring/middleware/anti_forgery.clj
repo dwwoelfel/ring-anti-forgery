@@ -9,7 +9,7 @@
   *anti-forgery-token*)
 
 (defn- new-token []
-  (random/base64 60))
+  (random/url-part 60))
 
 (defn- session-token [request]
   (get-in request [:session ::anti-forgery-token]))
